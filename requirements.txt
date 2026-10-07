@@ -1,0 +1,7 @@
+selenium==4.35.0
+undetected-chromedriver==3.5.5
+requests==2.34.2
+websockets==16.1
+charset-normalizer==3.4.9
+Flask==3.0.3
+setuptools

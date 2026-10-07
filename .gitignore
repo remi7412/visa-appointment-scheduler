@@ -1,0 +1,25 @@
+# Environment
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Configuration and Secrets
+config.json
+cookies/
+
+# Build artifacts and compiled files
+build/
+dist/
+*.spec
+*.zip
+*.exe
+
+# Logs and debugging
+logs/
+screenshots/
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/

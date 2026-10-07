@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisaBot Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>VisaBot Pro</h1>
+            <div class="status-badge stopped" id="statusBadge">Stopped</div>
+        </header>
+
+        <main>
+            <div class="panel config-panel">
+                <h2>Configuration</h2>
+                <form id="configForm">
+                    <div class="form-group">
+                        <label>Username (Email)</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Target Cities</label>
+                        <div class="custom-dropdown" id="citiesDropdown">
+                            <div class="dropdown-header" onclick="toggleDropdown()">Choose the cities... ▼</div>
+                            <div class="dropdown-content" id="citiesGroup">
+                                <label class="checkbox-label"><input type="checkbox" value="CHENNAI VAC" onchange="updateDropdownText()"> Chennai</label>
+                                <label class="checkbox-label"><input type="checkbox" value="HYDERABAD VAC" onchange="updateDropdownText()"> Hyderabad</label>
+                                <label class="checkbox-label"><input type="checkbox" value="KOLKATA VAC" onchange="updateDropdownText()"> Kolkata</label>
+                                <label class="checkbox-label"><input type="checkbox" value="MUMBAI VAC" onchange="updateDropdownText()"> Mumbai</label>
+                                <label class="checkbox-label"><input type="checkbox" value="NEW DELHI VAC" onchange="updateDropdownText()"> New Delhi</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: flex; justify-content: space-between; align-items: center;">
+                            Target Dates 
+                            <button type="button" class="btn-sm btn-add" onclick="addDateRow()">+ Add Date</button>
+                        </label>
+                        <div class="date-header">
+                            <div style="flex:1; font-size: 12px; color: var(--text-muted);">Year</div>
+                            <div style="flex:1; font-size: 12px; color: var(--text-muted);">Month</div>
+                            <div style="flex:1.5; font-size: 12px; color: var(--text-muted);">Specific Dates</div>
+                            <div style="width: 30px;"></div>
+                        </div>
+                        <div id="datesContainer" class="dates-container">
+                            <!-- Date rows added here via JS -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Proxy List (Comma separated URL format)</label>
+                        <textarea id="proxies" rows="3" placeholder="http://user:pass@ip:port"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-save" onclick="saveConfig()">Save Configuration</button>
+                </form>
+                
+                <div class="control-actions">
+                    <button class="btn btn-start" id="startBtn" onclick="startBot()">▶ Start Bot</button>
+                    <button class="btn btn-stop" id="stopBtn" onclick="stopBot()" disabled>⏹ Stop Bot</button>
+                </div>
+            </div>
+
+            <div class="panel logs-panel">
+                <h2>Live Logs</h2>
+                <div class="logs-container" id="logsContainer">
+                    <div class="log-entry sys-msg">System initialized. Ready to start.</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
