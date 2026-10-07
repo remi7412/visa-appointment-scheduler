@@ -1,4 +1,7 @@
-# US Visa Appointment Automation System 🤖
+# visa-appointment-scheduler 🤖
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)
 
 An advanced, fully-unattended automation framework designed to autonomously monitor and secure earlier US Visa interview slots. Built with enterprise-grade resilience, it bypasses complex security measures, continuously monitors availability, and books appointments with zero human intervention.
 
