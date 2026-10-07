@@ -33,9 +33,9 @@ Provide your login details and the exact, lowercase answers to your account's se
   "password": "YourPassword123",
   "security_answers": {
     "pet": "cat",
-    "road": "kralpora",
-    "street": "kralpora",
-    "work": "baramulla"
+    "road": "rat",
+    "street": "sat",
+    "work": "rain"
   }
 }
 ```
